@@ -318,11 +318,11 @@ blockquote p {
 .logo {
   display: block;
   float: left;
-  width: 104px;
+  width: 200px;
   height: 46px;
   text-indent: -9999px;
   background: url(images/logo.svg) no-repeat;
-  background-size: 104px 46px;
+  background-size: contain;
 }
 
 .logo:hover, .logo:focus {
