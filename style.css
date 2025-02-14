@@ -1,17 +1,10 @@
 /*
-	The7 by TEMPLATE STOCK
-	templatestock.co @templatestock
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
-
-/*
 
 [Table of content]
 
 1. General Styling
 2. Header
 3. Home Slider, Parallax & Video
-4. Services Section
 5. Work Section
 6. Logo Carousel
 7. CLient Carousel
@@ -508,13 +501,17 @@ blockquote p {
   Parallax 
 ********************************************************* */
 
-.parallax-section {
+.parallax-section {/* Aqui toco la imagen del fondo del HOME*/
   z-index: -1;
   clear: both;
   background-image: url('images/home.jpg');
   background-repeat: repeat;
   background-attachment: fixed;
   background-position: center center;
+  min-height: 1080px; /* Ajusta este valor según sea necesario */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .parallax2 {
@@ -562,57 +559,7 @@ blockquote p {
   color: #fff;
 }
 
-/* *********************************************************
-  Services Section
-********************************************************* */
 
-.services, .service-box {
-  text-align: center;
-}
-
-.service-icon {
-  margin-top: 20px;
-  padding-top: 1em;
-}
-
-.circle-icon {
-  display: inline-block;
-  font-size: 2em;
-  padding: 1.1em 1.15em;
-  color: #484f58;
-/*border-radius*/
-  -webkit-border-radius: 50%;
-     -moz-border-radius: 50%;
-          border-radius: 50%;
-  background: transparent;
-/*box-shadow*/
-  -webkit-box-shadow: 0 0 0 2px #484f58;
-     -moz-box-shadow: 0 0 0 2px #484f58;
-          box-shadow: 0 0 0 2px #484f58;
-/*transition*/
-  -webkit-transition: all .15s linear;
-     -moz-transition: all .15s linear;
-       -o-transition: all .15s linear;
-          transition: all .15s linear;
-}
-
-.service-box:hover .circle-icon {
-    /*box-shadow*/
-  -webkit-transform: scale(1.1);
-     -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-       -o-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-.service-entry {
-  margin-top: 70px;
-  padding: 0 .5em;
-}
-
-.service-entry p {
-  margin-bottom: 10px;
-}
 
 /* *********************************************************
   Work Section
@@ -1712,10 +1659,6 @@ footer p, footer a {
     border: none;
     box-shadow: none;
     width: 100%;
-  }
-
-  .service-entry {
-    margin-bottom: 2.5em;
   }
 
   #page-sidebar-grid .post-wrap {
