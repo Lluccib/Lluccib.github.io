@@ -4,10 +4,12 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  padding-top: 80px; /* space for fixed nav */
   background: #fafafa;
   color: #222;
   line-height: 1.6;
 }
+
 
 header {
   text-align: center;
@@ -22,7 +24,19 @@ header h1 {
 }
 
 nav {
-  margin-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: 2px solid #eee;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 nav a {
@@ -30,13 +44,18 @@ nav a {
   text-decoration: none;
   color: #0055ff;
   font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 6px;
 }
 
-.main-title {
-  text-align: center;
-  font-size: 6rem;
-  margin-top: 40px;
-  margin-bottom: 40px;
+nav a:hover {
+  background: rgba(0,85,255,0.08);
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #0055ff;
   font-weight: bold;
 }
 
