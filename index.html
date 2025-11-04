@@ -17,13 +17,13 @@
         </nav>
     </header>
 
-    <h1 class="main-title">LLUC CID BERNAL</h1>
+    <h1 class="main-title reveal">LLUC CID BERNAL</h1>
 
 
     <section id="projects">
-        <h2>MY WORK AND EXPERIENCE</h2>
+        <h2 class="reveal">MY WORK AND EXPERIENCE</h2>
 
-        <div class="project">
+        <div class="project reveal">
             <h3>MOTS</h3>
             <img src="https://migueliglesiasabarca.github.io/img/motsinicial.webp" alt="Mots Screenshot">
             <p>Mots is a casual 2D puzzle game focused on learning and practicing Catalan. Across different levels, players solve word-based challenges, discovering new terms and their meanings as they progress.</p>
@@ -31,7 +31,7 @@
             <a href="https://migueliglesiasabarca.github.io/img/motsinicial.webp" target="_blank">Play Game</a>
         </div>
 
-        <div class="project">
+        <div class="project reveal">
             <h3>Ares Atlas</h3>
             <img src="https://migueliglesiasabarca.github.io/img/ares4.webp" alt="Ares Atlas Screenshot">
             <p>In Ares Atlas you dive deep into the life of Ares, experiencing her greatest passion—exploration...</p>
@@ -39,7 +39,7 @@
             <a href="https://migueliglesiasabarca.github.io/img/ares4.webp" target="_blank">Play Game</a>
         </div>
 
-        <div class="project">
+        <div class="project reveal">
             <h3>Warhammer 40K</h3>
             <img src="https://migueliglesiasabarca.github.io/img/whinicial.webp" alt="Warhammer40K Screenshot">
             <p>The hive world of Temperis is under siege. A brutal WAAAGH! led by the savage ork warboss Brutus has plunged the planet into chaos. The hive city of Martyria Eterna, the last bastion of resistance, is being overrun by endless green-skinned hordes.</p>
@@ -47,7 +47,7 @@
             <a href="https://migueliglesiasabarca.github.io/img/whinicial.webp" target="_blank">Play Game</a>
         </div>
 
-        <div class="project">
+        <div class="project reveal">
             <h3>Mind’s Abyss</h3>
             <img src="https://migueliglesiasabarca.github.io/img/mindsinicial.webp" alt="Mind’s Abyss Screenshot">
             <p>Mind’s Abyss es una aventura cooperativa inolvidable a través de las complejidades de la mente de un minero retirado con Alzheimer...</p>
@@ -55,7 +55,7 @@
             <a href="https://mermelada-games.itch.io/mindabyss" target="_blank">Play Game</a>
         </div>
 
-        <div class="project">
+        <div class="project reveal">
             <h3>Stelar</h3>
             <img src="https://migueliglesiasabarca.github.io/img/stelarinicial.webp" alt="Stelar Screenshot">
             <p>'Stelar' is a game about serenity, logic and creativity under the stars. Create constellations in tranquil cosmic landscapes, enjoy soothing music, and enjoy this peaceful puzzle game. No time pressure, just the wonders of the universe at your own pace.</p>
@@ -64,7 +64,7 @@
         </div>
 
 
-        <div class="project">
+        <div class="project reveal">
             <h3>Sure?</h3>
             <img src="https://img.itch.zone/aW1hZ2UvMjcxNTU0OC8xNjIwNjkyNy5wbmc=/794x1000/gF0RMG.png" alt="Sure? Screenshot">
             <p>Sure? is a cooperative, fast-paced game, you will work with a friend to find fake news. Both of you will play as interns at a news company, where one will have the questions, and the other will have the answers.</p>
@@ -74,12 +74,12 @@
     </section>
 
     <section id="about">
-    <h2>About Me</h2>
+    <h2 class="reveal">About Me</h2>
     <p>I am Lluc Cid Bernal, a passionate Videogame Developer and Designer at CITM | UPC with a creative and technical approach to crafting engaging experiences. My focus lies in Game Design and Level Design, employing a wide range of tools and skills.</p>
     </section>
 
     <section id="skills">
-        <h2>Skills</h2>
+        <h2 class="reveal">Skills</h2>
         <ul>
             <li>Unity</li>
             <li>C#</li>
@@ -92,10 +92,30 @@
     </section>
 
     <section id="contact">
-        <h2>Contact</h2>
+        <h2 class="reveal">Contact</h2>
         <p>Email: lluc.cid.bernal@gmail.com</p>
         <p><a href="https://www.linkedin.com/in/lluc-cid-i-bernal-193843251/">LinkedIn</a></p>
         <p><a href="https://github.com/Lluccib">GitHub</a></p>
     </section>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(".reveal");
+
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect().top;
+                if (position < windowHeight - 100) {
+                    el.classList.add("visible");
+                }
+            });
+        }
+    
+        revealOnScroll();
+        window.addEventListener("scroll", revealOnScroll);
+    });
+    </script>
+
 </body>
 </html>
