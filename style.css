@@ -117,3 +117,28 @@ ul li {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Project card hover enhancement */
+.project {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Image slight zoom on hover */
+.project img {
+  transition: transform 0.35s ease;
+}
+
+.project:hover img {
+  transform: scale(1.03);
+}
+
+/* Better project title spacing */
+.project h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
