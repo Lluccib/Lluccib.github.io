@@ -1,10 +1,10 @@
 /* Basic clean portfolio style for Lluc Cid */
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  padding-top: 80px; /* space for fixed nav */
+  padding-top: 80px; /* para el nav fijo */
   background: #fafafa;
   color: #222;
   line-height: 1.6;
@@ -55,6 +55,15 @@ section {
 h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 4.5rem;
+  letter-spacing: -1px;
+  margin-top: 80px;
+  margin-bottom: 60px;
+  font-weight: 700;
 }
 
 .project {
