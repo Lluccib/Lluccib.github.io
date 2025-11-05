@@ -1,197 +1,155 @@
-/* Basic clean portfolio style for Lluc Cid */
+/* ====== GLOBAL THEME ====== */
+:root {
+  --bg: #0d1117;
+  --bg-soft: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --accent: #58a6ff;
+}
 
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  padding-top: 80px; /* para el nav fijo */
-  background: #0d1117; /* dark background like GitHub dark */
-  color: #e6edf3;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
 }
 
+/* ====== NAV ====== */
 nav {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   height: 64px;
-  background: #161b22;
+  background: rgba(22, 27, 34, 0.75);
+  backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 10px;
-  border-bottom: 2px solid #30363d;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-bottom: 1px solid var(--border);
+  z-index: 999;
 }
 
 nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: #58a6ff;
+  color: var(--accent);
   font-weight: 600;
   padding: 10px 14px;
   border-radius: 8px;
-  transition: all 0.25s ease;
+  transition: 0.25s;
 }
 
 nav a:hover {
-  background: rgba(0, 85, 255, 0.12);
+  background: rgba(88,166,255,0.15);
   transform: translateY(-2px);
 }
 
+/* ====== HERO FULLSCREEN ====== */
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9));
+}
+
+/* Text on video */
+.hero-text {
+  position: absolute;
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Content starts after hero */
+main {
+  padding-top: 100vh;
+}
+
+/* ====== SECTIONS ====== */
 section {
   max-width: 900px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
 h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
 }
 
-.main-title {
-  text-align: center;
-  font-size: 4.5rem;
-  letter-spacing: -1px;
-  margin-top: 80px;
-  margin-bottom: 60px;
-  font-weight: 700;
-}
-
+/* ====== PROJECT CARDS ====== */
 .project {
-  background: #161b22;
-  border: 1px solid #30363d;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 25px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.project img {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-
-.project a {
-  display: inline-block;
-  padding: 8px 14px;
-  background: #0055ff;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 5px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li {
-  background: white;
-  margin: 6px 0;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-}
-
-#contact a {
-  color: #58a6ff;
-  font-weight: bold;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Project card hover enhancement */
-.project {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .project:hover {
   transform: translateY(-6px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
 }
 
-/* Image slight zoom on hover */
 .project img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 8px;
   transition: transform 0.35s ease;
 }
 
 .project:hover img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
-/* Better project title spacing */
-.project h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
-}
-
-/* Typography hierarchy upgrades */
-h1, .main-title {
+.project a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
   font-weight: 700;
-  letter-spacing: -1.2px;
+  margin-top: 10px;
+  transition: 0.25s ease;
 }
 
-h2 {
-  font-weight: 700;
-  margin-bottom: 28px;
-  font-size: 2.2rem;
-  letter-spacing: -0.6px;
+.project a:hover {
+  background: #1f6feb;
+  transform: translateY(-2px);
 }
 
-h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 10px;
+
+/* ====== SCROLL REVEAL ====== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
 }
 
-p {
-  font-size: 1.05rem;
-  font-weight: 300;
-  line-height: 1.65;
-  margin-bottom: 14px;
-}
-
-ul li {
-  font-size: 1.05rem;
-  font-weight: 400;
-}
-
-section {
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
-
-/* Responsive typography */
-@media (max-width: 768px) {
-  .main-title {
-    font-size: 2.8rem;
-    margin-top: 90px;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  nav a {
-    padding: 8px;
-    margin: 0 8px;
-  }
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
