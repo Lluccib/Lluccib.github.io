@@ -5,8 +5,8 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 80px; /* para el nav fijo */
-  background: #fafafa;
-  color: #222;
+  background: #0d1117; /* dark background like GitHub dark */
+  color: #e6edf3;
   line-height: 1.6;
 }
 
@@ -16,12 +16,12 @@ nav {
   left: 0;
   right: 0;
   height: 64px;
-  background: #ffffff;
+  background: #161b22;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 10px;
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid #30363d;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
@@ -29,7 +29,7 @@ nav {
 nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: #0055ff;
+  color: #58a6ff;
   font-weight: 600;
   padding: 10px 14px;
   border-radius: 8px;
@@ -62,8 +62,8 @@ h2 {
 }
 
 .project {
-  background: white;
-  border: 1px solid #ddd;
+  background: #161b22;
+  border: 1px solid #30363d;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 25px;
@@ -103,7 +103,7 @@ ul li {
 }
 
 #contact a {
-  color: #0055ff;
+  color: #58a6ff;
   font-weight: bold;
 }
 
