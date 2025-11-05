@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lluc Cid – Game Designer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Canvas de fondo para partículas -->
+    <canvas id="nokey">Your Browser Don't Support Canvas, Please Download Chrome</canvas>
+
     <header>
         <nav>
             <a href="#projects">My Work & Experience</a>
@@ -15,98 +20,134 @@
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </nav>
-
-        <div class="hero">
-            <video autoplay muted loop playsinline>
-                <source src="https://raw.githubusercontent.com/Lluccib/Lluccib.github.io/main/Assets/video/Prueba.mp4" type="video/mp4" type="video/mp4">
-                <!-- fallback si falla el video -->
-                <img src="TU_GIF_O_IMAGEN.webp" alt="Showcase reel">
-            </video>
-        </div>
     </header>
 
-    <h1 class="main-title reveal">LLUC CID BERNAL</h1>
+    <div class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="https://raw.githubusercontent.com/Lluccib/Lluccib.github.io/main/Assets/video/Prueba.mp4" type="video/mp4">
+        </video>
 
+        <div class="hero-content">
+            <h1 class="hero-title">LLUC CID BERNAL</h1>
+            <p class="hero-subtitle">Game & Level Designer</p>
+            <div class="hero-text">
+                I create interactive worlds<br>
+                where players feel something real.
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </div>
 
     <section id="projects">
         <h2 class="reveal">MY WORK AND EXPERIENCE</h2>
 
-        <div class="project reveal">
-            <h3>MOTS</h3>
-            <img src="https://migueliglesiasabarca.github.io/img/motsinicial.webp" alt="Mots Screenshot">
-            <p>Mots is a casual 2D puzzle game focused on learning and practicing Catalan. Across different levels, players solve word-based challenges, discovering new terms and their meanings as they progress.</p>
-            <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> Premis Ludi 2024</p>
-            <a href="https://migueliglesiasabarca.github.io/img/motsinicial.webp" target="_blank">Play Game</a>
-        </div>
+        <div class="projects-grid">
 
-        <div class="project reveal">
-            <h3>Ares Atlas</h3>
-            <img src="https://migueliglesiasabarca.github.io/img/ares4.webp" alt="Ares Atlas Screenshot">
-            <p>In Ares Atlas you dive deep into the life of Ares, experiencing her greatest passion—exploration...</p>
-            <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> 8th Gran Citm Game Jam 2024</p>
-            <a href="https://migueliglesiasabarca.github.io/img/ares4.webp" target="_blank">Play Game</a>
-        </div>
+            <div class="project reveal project-mots" onclick="openProject('mots')">
+                <h3>MOTS</h3>
+                <img src="https://migueliglesiasabarca.github.io/img/motsinicial.webp" alt="Mots Screenshot">
+                <p>Mots is a casual 2D puzzle game focused on learning and practicing Catalan…</p>
+                <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> Premis Ludi 2024</p>
+                <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('mots')">View Details</a>
+            </div>
 
-        <div class="project reveal">
-            <h3>Warhammer 40K</h3>
-            <img src="https://migueliglesiasabarca.github.io/img/whinicial.webp" alt="Warhammer40K Screenshot">
-            <p>The hive world of Temperis is under siege. A brutal WAAAGH! led by the savage ork warboss Brutus has plunged the planet into chaos. The hive city of Martyria Eterna, the last bastion of resistance, is being overrun by endless green-skinned hordes.</p>
-            <p><strong>Engine:</strong> Coffee Engine (custom engine) | <strong>Jam:</strong> PROJECT 3 2024, at CITM UPC</p>
-            <a href="https://migueliglesiasabarca.github.io/img/whinicial.webp" target="_blank">Play Game</a>
-        </div>
+            <div class="project reveal project-ares" onclick="openProject('ares')">
+                <h3>Ares Atlas</h3>
+                <img src="https://migueliglesiasabarca.github.io/img/ares4.webp" alt="Ares Atlas Screenshot">
+                <p>In Ares Atlas you dive deep into the life of Ares…</p>
+                <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> 8th Gran Citm Game Jam 2024</p>
+                <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('ares')">View Details</a>
+            </div>
 
-        <div class="project reveal">
-            <h3>Mind’s Abyss</h3>
-            <img src="https://migueliglesiasabarca.github.io/img/mindsinicial.webp" alt="Mind’s Abyss Screenshot">
-            <p>Mind’s Abyss es una aventura cooperativa inolvidable a través de las complejidades de la mente de un minero retirado con Alzheimer...</p>
-            <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> 7th Gran Citm Game Jam 2023</p>
-            <a href="https://mermelada-games.itch.io/mindabyss" target="_blank">Play Game</a>
-        </div>
+            <div class="project reveal project-warhammer" onclick="openProject('warhammer')">
+                <h3>Warhammer 40K</h3>
+                <img src="https://migueliglesiasabarca.github.io/img/whinicial.webp" alt="Warhammer40K Screenshot">
+                <p>The hive world of Temperis is under siege…</p>
+                <p><strong>Engine:</strong> Coffee Engine | <strong>Jam:</strong> Project 3 CITM UPC</p>
+                <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('warhammer')">View Details</a>
+            </div>
 
-        <div class="project reveal">
-            <h3>Stelar</h3>
-            <img src="https://migueliglesiasabarca.github.io/img/stelarinicial.webp" alt="Stelar Screenshot">
-            <p>'Stelar' is a game about serenity, logic and creativity under the stars. Create constellations in tranquil cosmic landscapes, enjoy soothing music, and enjoy this peaceful puzzle game. No time pressure, just the wonders of the universe at your own pace.</p>
-            <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> Indie TRS Game Jam 2023</p>
-            <a href="https://migueliglesiasabarca.github.io/img/stelarinicial.webp" target="_blank">Play Game</a>
-        </div>
+            <div class="project reveal project-minds" onclick="openProject('minds')">
+                <h3>Mind's Abyss</h3>
+                <img src="https://migueliglesiasabarca.github.io/img/mindsinicial.webp" alt="Mind's Abyss Screenshot">
+                <p>Mind's Abyss es una aventura cooperativa…</p>
+                <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> 7th Gran Citm Game Jam 2023</p>
+                <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('minds')">View Details</a>
+            </div>
 
+            <div class="project reveal project-stelar" onclick="openProject('stelar')">
+                <h3>Stelar</h3>
+                <img src="https://migueliglesiasabarca.github.io/img/stelarinicial.webp" alt="Stelar Screenshot">
+                <p>'Stelar' is a game about serenity…</p>
+                <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> Indie TRS Game Jam 2023</p>
+                <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('stelar')">View Details</a>
+            </div>
 
-        <div class="project reveal">
-            <h3>Sure?</h3>
-            <img src="https://img.itch.zone/aW1hZ2UvMjcxNTU0OC8xNjIwNjkyNy5wbmc=/794x1000/gF0RMG.png" alt="Sure? Screenshot">
-            <p>Sure? is a cooperative, fast-paced game, you will work with a friend to find fake news. Both of you will play as interns at a news company, where one will have the questions, and the other will have the answers.</p>
-            <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> Truth & Lies Capital of Democracy Game Jam 2024</p>
-            <a href="https://mermelada-games.itch.io/sure" target="_blank">Play Game</a>
+            <div class="project reveal project-sure" onclick="openProject('sure')">
+                <h3>Sure?</h3>
+                <img src="https://img.itch.zone/aW1hZ2UvMjcxNTU0OC8xNjIwNjkyNy5wbmc=/794x1000/gF0RMG.png" alt="Sure Screenshot">
+                <p>Sure? is a cooperative…</p>
+                <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> Truth & Lies Jam 2024</p>
+                <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('sure')">View Details</a>
+            </div>
+
         </div>
     </section>
 
     <section id="about">
-    <h2 class="reveal">About Me</h2>
-    <p>I am Lluc Cid Bernal, a passionate Videogame Developer and Designer at CITM | UPC with a creative and technical approach to crafting engaging experiences. My focus lies in Game Design and Level Design, employing a wide range of tools and skills.</p>
+        <h2 class="reveal">About Me</h2>
+        <p>I am Lluc Cid Bernal, a passionate Videogame Developer and Designer at CITM | UPC with a creative and technical approach to crafting engaging experiences. My focus lies in Game Design and Level Design, employing a wide range of tools and skills.</p>
     </section>
 
     <section id="skills">
         <h2 class="reveal">Skills</h2>
-        <ul>
-            <li>Unity</li>
-            <li>C#</li>
-            <li>Blender</li>
-            <li>Maya</li>
-            <li>Git / GitHub</li>
-            <li>Sound Design Basics</li>
-            <li>Teamwork & Communication</li>
-        </ul>
+        
+        <div class="skills-container">
+            <div class="skills-category">
+                <h3>Hard Skills</h3>
+                <ul>
+                    <li>Unity</li>
+                    <li>C#</li>
+                    <li>Blender</li>
+                    <li>Maya</li>
+                    <li>Git / GitHub</li>
+                    <li>Sound Design Basics</li>
+                </ul>
+            </div>
+            
+            <div class="skills-category">
+                <h3>Soft Skills</h3>
+                <ul>
+                    <li>Teamwork & Communication</li>
+                    <li>Problem Solving</li>
+                    <li>Creative Thinking</li>
+                    <li>Time Management</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
         <h2 class="reveal">Contact</h2>
         <p>Email: lluc.cid.bernal@gmail.com</p>
-        <p><a href="https://www.linkedin.com/in/lluc-cid-i-bernal-193843251/">LinkedIn</a></p>
-        <p><a href="https://github.com/Lluccib">GitHub</a></p>
+        <p><a href="https://www.linkedin.com/in/lluc-cid-i-bernal-193843251/" target="_blank">LinkedIn</a></p>
+        <p><a href="https://github.com/Lluccib" target="_blank">GitHub</a></p>
     </section>
+
+    <!-- PROJECT MODALS -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeProject()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
     
+    <script src="particles.js"></script>
     <script>
+    // Scroll reveal animation
     document.addEventListener("DOMContentLoaded", () => {
         const elements = document.querySelectorAll(".reveal");
 
@@ -123,6 +164,233 @@
         revealOnScroll();
         window.addEventListener("scroll", revealOnScroll);
     });
+
+    // Project data
+    const projectsData = {
+        mots: {
+            title: "MOTS",
+            subtitle: "A Catalan Learning Puzzle Game",
+            engine: "Unity",
+            jam: "Premis Ludi 2024",
+            description: "Mots is a casual 2D puzzle game focused on learning and practicing Catalan vocabulary. Players solve word puzzles while discovering the beauty of the Catalan language through engaging gameplay mechanics.",
+            role: "Game Designer & Level Designer",
+            duration: "48 hours",
+            team: "4 people",
+            features: [
+                "Interactive word puzzles",
+                "Progressive difficulty system",
+                "Educational content integration",
+                "Clean and intuitive UI"
+            ],
+            gallery: [
+                "https://migueliglesiasabarca.github.io/img/motsinicial.webp",
+                "https://migueliglesiasabarca.github.io/img/motsinicial.webp",
+                "https://migueliglesiasabarca.github.io/img/motsinicial.webp"
+            ],
+            links: {
+                play: "https://migueliglesiasabarca.github.io/img/motsinicial.webp"
+            }
+        },
+        ares: {
+            title: "Ares Atlas",
+            subtitle: "A Mythological Adventure",
+            engine: "Unity",
+            jam: "8th Gran Citm Game Jam 2024",
+            description: "In Ares Atlas you dive deep into the life of Ares, exploring mythological themes through intense gameplay. Navigate through challenges inspired by Greek mythology.",
+            role: "Game Designer",
+            duration: "48 hours",
+            team: "5 people",
+            features: [
+                "Mythological storytelling",
+                "Dynamic combat system",
+                "Atmospheric environments",
+                "Character progression"
+            ],
+            gallery: [
+                "https://migueliglesiasabarca.github.io/img/ares4.webp",
+                "https://migueliglesiasabarca.github.io/img/ares4.webp",
+                "https://migueliglesiasabarca.github.io/img/ares4.webp"
+            ],
+            links: {
+                play: "https://migueliglesiasabarca.github.io/img/ares4.webp"
+            }
+        },
+        warhammer: {
+            title: "Warhammer 40K",
+            subtitle: "Tactical Strategy Game",
+            engine: "Coffee Engine",
+            jam: "Project 3 CITM UPC",
+            description: "The hive world of Temperis is under siege. Lead your forces through tactical battles in this Warhammer 40K inspired strategy game.",
+            role: "Level Designer & Game Designer",
+            duration: "3 months",
+            team: "8 people",
+            features: [
+                "Turn-based tactical combat",
+                "Custom game engine",
+                "Strategic unit management",
+                "Warhammer 40K universe adaptation"
+            ],
+            gallery: [
+                "https://migueliglesiasabarca.github.io/img/whinicial.webp",
+                "https://migueliglesiasabarca.github.io/img/whinicial.webp",
+                "https://migueliglesiasabarca.github.io/img/whinicial.webp"
+            ],
+            links: {
+                play: "https://migueliglesiasabarca.github.io/img/whinicial.webp"
+            }
+        },
+        minds: {
+            title: "Mind's Abyss",
+            subtitle: "Cooperative Puzzle Adventure",
+            engine: "Unity",
+            jam: "7th Gran Citm Game Jam 2023",
+            description: "Mind's Abyss is a cooperative adventure where players must work together to solve mind-bending puzzles and explore the depths of the human psyche.",
+            role: "Game Designer & Level Designer",
+            duration: "48 hours",
+            team: "4 people",
+            features: [
+                "Cooperative gameplay mechanics",
+                "Psychological puzzle design",
+                "Atmospheric storytelling",
+                "Team coordination challenges"
+            ],
+            gallery: [
+                "https://migueliglesiasabarca.github.io/img/mindsinicial.webp",
+                "https://migueliglesiasabarca.github.io/img/mindsinicial.webp",
+                "https://migueliglesiasabarca.github.io/img/mindsinicial.webp"
+            ],
+            links: {
+                play: "https://mermelada-games.itch.io/mindabyss"
+            }
+        },
+        stelar: {
+            title: "Stelar",
+            subtitle: "A Serene Space Journey",
+            engine: "Unity",
+            jam: "Indie TRS Game Jam 2023",
+            description: "'Stelar' is a game about serenity, exploration, and discovery. Navigate through peaceful cosmic environments while uncovering the mysteries of space.",
+            role: "Game Designer",
+            duration: "72 hours",
+            team: "3 people",
+            features: [
+                "Relaxing gameplay experience",
+                "Beautiful space environments",
+                "Exploration mechanics",
+                "Ambient soundscape"
+            ],
+            gallery: [
+                "https://migueliglesiasabarca.github.io/img/stelarinicial.webp",
+                "https://migueliglesiasabarca.github.io/img/stelarinicial.webp",
+                "https://migueliglesiasabarca.github.io/img/stelarinicial.webp"
+            ],
+            links: {
+                play: "https://migueliglesiasabarca.github.io/img/stelarinicial.webp"
+            }
+        },
+        sure: {
+            title: "Sure?",
+            subtitle: "A Cooperative Deception Game",
+            engine: "Unity",
+            jam: "Truth & Lies Jam 2024",
+            description: "Sure? is a cooperative game where players must distinguish truth from lies. Test your perception and teamwork in this unique social deduction experience.",
+            role: "Game Designer",
+            duration: "48 hours",
+            team: "4 people",
+            features: [
+                "Social deduction mechanics",
+                "Cooperative gameplay",
+                "Truth and lie systems",
+                "Player interaction focus"
+            ],
+            gallery: [
+                "https://img.itch.zone/aW1hZ2UvMjcxNTU0OC8xNjIwNjkyNy5wbmc=/794x1000/gF0RMG.png",
+                "https://img.itch.zone/aW1hZ2UvMjcxNTU0OC8xNjIwNjkyNy5wbmc=/794x1000/gF0RMG.png",
+                "https://img.itch.zone/aW1hZ2UvMjcxNTU0OC8xNjIwNjkyNy5wbmc=/794x1000/gF0RMG.png"
+            ],
+            links: {
+                play: "https://mermelada-games.itch.io/sure"
+            }
+        }
+    };
+
+    // Open project modal
+    function openProject(projectId) {
+        const project = projectsData[projectId];
+        const modal = document.getElementById('project-modal');
+        const modalBody = document.getElementById('modal-body');
+        
+        // Build gallery HTML
+        let galleryHTML = project.gallery.map(img => 
+            `<img src="${img}" alt="${project.title}">`
+        ).join('');
+        
+        // Build features HTML
+        let featuresHTML = project.features.map(feature => 
+            `<li>${feature}</li>`
+        ).join('');
+        
+        modalBody.innerHTML = `
+            <h1>${project.title}</h1>
+            <h2>${project.subtitle}</h2>
+            
+            <div class="project-info-grid">
+                <div class="info-item">
+                    <strong>Engine:</strong> ${project.engine}
+                </div>
+                <div class="info-item">
+                    <strong>Event:</strong> ${project.jam}
+                </div>
+                <div class="info-item">
+                    <strong>Role:</strong> ${project.role}
+                </div>
+                <div class="info-item">
+                    <strong>Duration:</strong> ${project.duration}
+                </div>
+                <div class="info-item">
+                    <strong>Team Size:</strong> ${project.team}
+                </div>
+            </div>
+            
+            <div class="project-description">
+                <h3>About the Project</h3>
+                <p>${project.description}</p>
+            </div>
+            
+            <div class="project-features">
+                <h3>Key Features</h3>
+                <ul>${featuresHTML}</ul>
+            </div>
+            
+            <div class="project-gallery">
+                <h3>Gallery</h3>
+                <div class="gallery-grid">
+                    ${galleryHTML}
+                </div>
+            </div>
+            
+            <div class="project-links">
+                <a href="${project.links.play}" target="_blank" class="play-button">Play Game</a>
+            </div>
+        `;
+        
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close project modal
+    function closeProject() {
+        const modal = document.getElementById('project-modal');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        const modal = document.getElementById('project-modal');
+        if (event.target === modal) {
+            closeProject();
+        }
+    }
     </script>
 
 </body>
