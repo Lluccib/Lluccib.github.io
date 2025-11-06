@@ -213,6 +213,10 @@
                 "Progressive difficulty and learning curve",
                 "Educational gameplay focused on Catalan language"
             ],
+            awards: [
+                { img: "Assets/awards/MaximumFunAward2024.svg", name: "SocialPoint Maximum Fun" },
+                { img: "Assets/awards/SelectedfurtherDevelopment.svg", name: "Best Game Award" }
+            ],
             gallery: [
                 "https://migueliglesiasabarca.github.io/img/mots1.webp",
                 "https://migueliglesiasabarca.github.io/img/mots2.webp",
@@ -249,6 +253,12 @@
                 "Multiple biomes and tutorial system",
                 "Progressive difficulty and level design",
                 "Award-winning technology and gameplay innovation"
+            ],
+            awards: [
+                { img: "Assets/awards/FinalistBestDesign.svg", name: "Honorable Mention Best Design" },
+                { img: "Assets/awards/BestTechAward.svg", name: "Best Technology Award" },
+                { img: "Assets/awards/FinalistBestGame.svg", name: "Honorable Mention Best Game" },
+                { img: "Assets/awards/BestGameAward2025.svg", name: "Pixel Awards Best Game" }
             ],
             gallery: [
                 "https://migueliglesiasabarca.github.io/img/ares3.webp",
@@ -322,6 +332,9 @@
                 "Narrative and mechanical tutorial level",
                 "Custom VFX for atmospheric feedback"
             ],
+            awards: [
+                { img: "Assets/awards/BestGameAward2024.svg", name: "Best Game Award" }
+            ],
             gallery: [
                 "https://migueliglesiasabarca.github.io/img/mindsabyss1.webp",
                 "https://migueliglesiasabarca.github.io/img/mindsabyss2.webp",
@@ -356,6 +369,10 @@
                 "Creation and discovery of constellations across multiple levels",
                 "Four unique block types adding depth and complexity",
                 "Accessible tutorial and level progression for all audiences"
+            ],
+            awards: [
+                { img: "Assets/awards/Terrassa.svg", name: "Terrassa Game Award" },
+                { img: "Assets/awards/Diversifiers.svg", name: "More Diversifiers Award" }
             ],
             gallery: [
                 "https://migueliglesiasabarca.github.io/img/stelar1.webp",
@@ -444,6 +461,21 @@
                 <p>${project.description}</p>
                 ${project.longDescription ? `<p>${project.longDescription}</p>` : ""}
             </div>
+
+            ${project.awards ? `
+            <div class="project-awards">
+                <h3>Awards</h3>
+                <div class="awards-grid">
+                    ${project.awards.map(a => `
+                        <div class="award-item">
+                            <img src="${a.img}" alt="${a.name}">
+                            <p>${a.name}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            ` : ""}
+
 
             ${project.trailer ? `
             <div class="project-trailer">
