@@ -70,12 +70,12 @@ nav a {
   --accent: #6b6b6b;
   
   /* Colores personalizados por proyecto */
-  --mots-color: #c8b6ff;
-  --ares-color: #8b6f47;
-  --warhammer-color: #8b1a1a;
-  --minds-color: #ffd700;
-  --stelar-color: #9b59b6;
-  --sure-color: #8b5a3c;
+  --mots-color: #6b6b6b;
+  --ares-color: #6b6b6b;
+  --warhammer-color: #6b6b6b;
+  --minds-color: #6b6b6b;
+  --stelar-color: #6b6b6b;
+  --sure-color: #6b6b6b;
 }
 
 * {
@@ -107,7 +107,7 @@ nav {
   top: 0;
   width: 100%;
   height: 64px;
-  background: rgba(10, 10, 10, 0.7);
+  background: rgba(10, 10, 10, 0.5);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
@@ -197,6 +197,25 @@ nav a:hover {
   opacity: 0.95;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.85));
+  z-index: 1;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  z-index: 3;
+}
+
 /* Scroll indicator */
 .scroll-indicator {
   position: absolute;
@@ -239,7 +258,7 @@ h2 {
 /* ====== PROJECT GRID ====== */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   gap: 20px;
   width: 100%;
 }
@@ -311,7 +330,7 @@ h2 {
 }
 
 .project-mots a:hover {
-  background: #d4c4ff;
+  background: #6b6b6b;
   box-shadow: 0 4px 12px rgba(200, 182, 255, 0.4);
 }
 
@@ -321,7 +340,7 @@ h2 {
 }
 
 .project-ares a:hover {
-  background: #a38560;
+  background: #6b6b6b;
   box-shadow: 0 4px 12px rgba(139, 111, 71, 0.4);
 }
 
@@ -331,7 +350,7 @@ h2 {
 }
 
 .project-warhammer a:hover {
-  background: #a32020;
+  background: #6b6b6b;
   box-shadow: 0 4px 12px rgba(139, 26, 26, 0.4);
 }
 
@@ -341,7 +360,7 @@ h2 {
 }
 
 .project-minds a:hover {
-  background: #ffdf33;
+  background: #6b6b6b;
   box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
 }
 
@@ -351,7 +370,7 @@ h2 {
 }
 
 .project-stelar a:hover {
-  background: #b06fc9;
+  background: #6b6b6b;
   box-shadow: 0 4px 12px rgba(155, 89, 182, 0.4);
 }
 
@@ -361,8 +380,35 @@ h2 {
 }
 
 .project-sure a:hover {
-  background: #a36b4a;
+  background: #6b6b6b;
   box-shadow: 0 4px 12px rgba(139, 90, 60, 0.4);
+}
+
+/* ====== FOOTER ====== */
+footer {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+  padding: 25px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+footer a {
+  color: #b0b0b0;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.2s;
+}
+
+footer a:hover {
+  color: white;
+  border-bottom-color: white;
 }
 
 /* ====== SKILLS & CONTACT ====== */
@@ -403,17 +449,36 @@ h2 {
   box-shadow: 0 4px 12px rgba(255,255,255,0.1);
 }
 
-#contact a {
+/* ====== FOOTER ====== */
+footer {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+  padding: 25px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+footer a {
   color: #b0b0b0;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: 0.2s;
 }
 
-#contact a:hover {
+footer a:hover {
   color: white;
   border-bottom-color: white;
 }
+
+
 
 /* ====== SCROLL REVEAL ====== */
 .reveal {
@@ -592,18 +657,25 @@ h2 {
 }
 
 .info-item {
-  background: var(--bg-soft);
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
+  background: transparent;
+  padding: 8px 12px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.95rem;
 }
 
-.info-item strong {
+.info-icon {
+  font-size: 1.3rem;
+  opacity: 0.8;
+}
+
+.info-label {
   color: #b0b0b0;
-  display: block;
-  margin-bottom: 5px;
   font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
 }
 
 .project-description {

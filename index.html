@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -130,12 +131,9 @@
         </div>
     </section>
 
-    <section id="contact">
-        <h2 class="reveal">Contact</h2>
-        <p>Email: lluc.cid.bernal@gmail.com</p>
-        <p><a href="https://www.linkedin.com/in/lluc-cid-i-bernal-193843251/" target="_blank">LinkedIn</a></p>
-        <p><a href="https://github.com/Lluccib" target="_blank">GitHub</a></p>
-    </section>
+    <footer id="contact">
+        <p>Email: lluc.cid.bernal@gmail.com | <a href="https://www.linkedin.com/in/lluc-cid-i-bernal-193843251/" target="_blank">LinkedIn</a> | <a href="https://github.com/Lluccib" target="_blank">GitHub</a></p>
+    </footer>
 
     <!-- PROJECT MODALS -->
     <div id="project-modal" class="modal">
@@ -147,6 +145,24 @@
     
     <script src="particles.js"></script>
     <script>
+
+    // Video fallback
+    document.addEventListener("DOMContentLoaded", () => {
+        const video = document.querySelector('.hero video');
+        
+        video.addEventListener('error', function() {
+            console.log('Error loading video, retrying...');
+            setTimeout(() => {
+                video.load();
+            }, 2000);
+        });
+        
+        // Forzar reproducción si se pausa
+        video.addEventListener('pause', function() {
+            video.play();
+        });
+    });
+    
     // Scroll reveal animation
     document.addEventListener("DOMContentLoaded", () => {
         const elements = document.querySelectorAll(".reveal");
@@ -335,19 +351,20 @@
             
             <div class="project-info-grid">
                 <div class="info-item">
-                    <strong>Engine:</strong> ${project.engine}
+                    <i data-lucide="gamepad-2" class="info-icon"></i>
+                    <span class="info-label">Engine:</span> ${project.engine}
                 </div>
                 <div class="info-item">
-                    <strong>Event:</strong> ${project.jam}
+                    <i data-lucide="user" class="info-icon"></i>
+                    <span class="info-label">Role:</span> ${project.role}
                 </div>
                 <div class="info-item">
-                    <strong>Role:</strong> ${project.role}
+                    <i data-lucide="clock" class="info-icon"></i>
+                    <span class="info-label">Duration:</span> ${project.duration}
                 </div>
                 <div class="info-item">
-                    <strong>Duration:</strong> ${project.duration}
-                </div>
-                <div class="info-item">
-                    <strong>Team Size:</strong> ${project.team}
+                    <i data-lucide="users" class="info-icon"></i>
+                    <span class="info-label">Team Size:</span> ${project.team}
                 </div>
             </div>
             
@@ -372,9 +389,12 @@
                 <a href="${project.links.play}" target="_blank" class="play-button">Play Game</a>
             </div>
         `;
-        
+
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
+
+        // Inicializar los iconos de Lucide después de insertar el HTML
+        lucide.createIcons();
     }
 
     // Close project modal
