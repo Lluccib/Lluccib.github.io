@@ -422,7 +422,7 @@
         const project = projectsData[projectId];
         const modal = document.getElementById('project-modal');
         const modalBody = document.getElementById('modal-body');
-        const header = document.querySelector('header'); // 👈 Nuevo
+        const header = document.querySelector('header');
 
         // 🔹 Animar desaparición del header
         header.classList.remove('fade-in');
@@ -433,7 +433,6 @@
             `<img src="${img}" alt="${project.title}">`
         ).join('');
         
-        // Build features HTML
         let featuresHTML = project.features.map(feature => 
             `<li>${feature}</li>`
         ).join('');
@@ -522,19 +521,6 @@
         lucide.createIcons();
     }
 
-function closeProject() {
-    const modal = document.getElementById('project-modal');
-    const header = document.querySelector('header'); // 👈 Nuevo
-
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-
-    // 🔹 Animar aparición del header
-    header.classList.remove('fade-out');
-    header.classList.add('fade-in');
-}
-
-
     function closeProject() {
         const modal = document.getElementById('project-modal');
         const header = document.querySelector('header');
@@ -545,6 +531,7 @@ function closeProject() {
         // 🔹 Animación fade-in del header
         header.classList.remove('fade-out');
         header.classList.add('fade-in');
+        
     }
 
     // Close modal when clicking outside
