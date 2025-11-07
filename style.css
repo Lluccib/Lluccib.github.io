@@ -76,6 +76,7 @@ nav a {
   --minds-color: #6b6b6b;
   --stelar-color: #6b6b6b;
   --sure-color: #6b6b6b;
+  --hexam-color: #6b6b6b;
 }
 
 * {
@@ -324,9 +325,20 @@ h2 {
 }
 
 /* Colores personalizados por proyecto */
+
+.project-hexam a {
+  background: var(--hexam-color);
+  color: #ffffff;
+}
+
+.project-hexam a:hover {
+  background: #6b6b6b;
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.4);
+}
+
 .project-mots a {
   background: var(--mots-color);
-  color: #1a1a1a;
+  color: #ffffff;
 }
 
 .project-mots a:hover {
@@ -356,7 +368,7 @@ h2 {
 
 .project-minds a {
   background: var(--minds-color);
-  color: #1a1a1a;
+  color: #ffffff;
 }
 
 .project-minds a:hover {

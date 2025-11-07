@@ -47,9 +47,17 @@
 
         <div class="projects-grid">
 
+            <div class="project reveal project-hexam" onclick="openProject('hexam')">
+                <h3>HEXAM</h3>
+                <img src="Assets/img/hexam.png" alt="hexam Screenshot">
+                <p>Casual Didactic Puzzle Game</p>
+                <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> Premis Ludi 2025</p>
+                <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('hexam')">View Details</a>
+            </div>
+
             <div class="project reveal project-mots" onclick="openProject('mots')">
                 <h3>MOTS</h3>
-                <img src="https://migueliglesiasabarca.github.io/img/motsinicial.webp" alt="Mots Screenshot">
+                <img src="Assets/img/mots.png" alt="Mots Screenshot">
                 <p>Catalan learning puzzle game</p>
                 <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> Premis Ludi 2024</p>
                 <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('mots')">View Details</a>
@@ -57,7 +65,7 @@
 
             <div class="project reveal project-ares" onclick="openProject('ares')">
                 <h3>Ares Atlas</h3>
-                <img src="https://migueliglesiasabarca.github.io/img/ares4.webp" alt="Ares Atlas Screenshot">
+                <img src="Assets/img/ares.webp" alt="Ares Atlas Screenshot">
                 <p>Platformer adventure</p>
                 <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> 8th Gran Citm Game Jam 2024</p>
                 <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('ares')">View Details</a>
@@ -65,7 +73,7 @@
 
             <div class="project reveal project-warhammer" onclick="openProject('warhammer')">
                 <h3>Warhammer 40K</h3>
-                <img src="https://migueliglesiasabarca.github.io/img/whinicial.webp" alt="Warhammer40K Screenshot">
+                <img src="Assets/img/warhammer.webp" alt="Warhammer40K Screenshot">
                 <p>Tactical strategy game</p>
                 <p><strong>Engine:</strong> Coffee Engine | <strong>Jam:</strong> Project 3 CITM UPC</p>
                 <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('warhammer')">View Details</a>
@@ -73,7 +81,7 @@
 
             <div class="project reveal project-minds" onclick="openProject('minds')">
                 <h3>Mind's Abyss</h3>
-                <img src="https://migueliglesiasabarca.github.io/img/mindsinicial.webp" alt="Mind's Abyss Screenshot">
+                <img src="Assets/img/minds.webp" alt="Mind's Abyss Screenshot">
                 <p>Cooperative Puzzle Adventure</p>
                 <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> 7th Gran Citm Game Jam 2023</p>
                 <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('minds')">View Details</a>
@@ -81,7 +89,7 @@
 
             <div class="project reveal project-stelar" onclick="openProject('stelar')">
                 <h3>Stelar</h3>
-                <img src="https://migueliglesiasabarca.github.io/img/stelarinicial.webp" alt="Stelar Screenshot">
+                <img src="Assets/img/stelar.webp" alt="Stelar Screenshot">
                 <p>SinglePLayer Puzzle game</p>
                 <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> Indie TRS Game Jam 2023</p>
                 <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('stelar')">View Details</a>
@@ -89,7 +97,7 @@
 
             <div class="project reveal project-sure" onclick="openProject('sure')">
                 <h3>Sure?</h3>
-                <img src="https://img.itch.zone/aW1hZ2UvMjcxNTU0OC8xNjIwNjkyNy5wbmc=/794x1000/gF0RMG.png" alt="Sure Screenshot">
+                <img src="Assets/img/sure.png" alt="Sure Screenshot">
                 <p>Cooperative Perception Game</p>
                 <p><strong>Engine:</strong> Unity | <strong>Jam:</strong> Truth & Lies Jam 2024</p>
                 <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('sure')">View Details</a>
@@ -415,7 +423,38 @@
                 play: "https://mermelada-games.itch.io/sure"
             }
         },
-
+        hexam: {
+            title: "HEXAM",
+            subtitle: "Casual Didactic Puzzle Game",
+            engine: "Unity",
+            jam: "Premis Ludi 2025",
+            description: `
+                HEXAM is a minimalist puzzle experience centered around hexagonal logic and spatial reasoning.
+                Designed as a personal challenge, the goal was to create a system where simplicity and depth
+                coexist through elegant mechanics. Each puzzle explores new logical combinations, rewarding
+                foresight and creativity.<br><br>
+                The design philosophy behind HEXAM focuses on pure gameplay — no distractions, no UI clutter.
+                Every interaction feels meaningful and precise, inviting players to think strategically in a
+                meditative atmosphere.
+            `,
+            role: "Game Designer & Level Designer",
+            duration: "5 weeks",
+            team: "4 people",
+            features: [
+                "Minimalist hex-based puzzle mechanics",
+                "Progressive level difficulty curve",
+                "Clean and focused user experience",
+                "Custom logic system implemented in Unity"
+            ],
+            gallery: [
+                "Assets/img/hexam1.png",
+                "Assets/img/hexam2.png",
+                "Assets/img/hexam3.png"
+            ],
+            links: {
+                play: "#"
+            }
+        }
     };
 
     function openProject(projectId) {
