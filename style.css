@@ -942,3 +942,38 @@ header.fade-in {
   transform: translateY(0);
   pointer-events: all;
 }
+
+/* === Carrusel fluido e imágenes completas === */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-top: 1rem;
+  background: #000;
+}
+
+.carousel-slide {
+  display: flex;
+  width: max-content;
+  animation: scrollLoop 35s linear infinite;
+}
+
+.carousel-slide img {
+  height: 400px; /* igual que ahora, mantiene proporción */
+  width: auto;
+  object-fit: contain; /* evita cortes, muestra imagen completa */
+  flex-shrink: 0;
+  border-radius: 12px;
+}
+
+/* Animación continua */
+@keyframes scrollLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+

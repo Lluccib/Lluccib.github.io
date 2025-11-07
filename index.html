@@ -467,11 +467,16 @@
         header.classList.remove('fade-in');
         header.classList.add('fade-out');
 
-        // Build gallery HTML
-        let galleryHTML = project.gallery.map(img => 
-            `<img src="${img}" alt="${project.title}">`
-        ).join('');
-        
+        // --- Carrusel automático ---
+
+        let galleryHTML = `
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                ${project.gallery.map(img => `<img src="${img}" alt="${project.title}">`).join('')}
+            </div>
+        </div>
+        `;
+
         let featuresHTML = project.features.map(feature => 
             `<li>${feature}</li>`
         ).join('');
@@ -555,6 +560,8 @@
             </div>
         `;
 
+        initCarousel(modalBody);
+
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
         lucide.createIcons();
@@ -580,6 +587,30 @@
             closeProject();
         }
     }
+
+    function initCarousel(modalBody) {
+        const slide = modalBody.querySelector('.carousel-slide');
+        if (!slide) return;
+
+        const imgs = slide.querySelectorAll('img');
+        if (imgs.length === 0) return;
+
+        // duplicamos una vez para crear el loop visual
+        slide.innerHTML += slide.innerHTML;
+
+        // al cargar las imágenes, forzamos ancho y reiniciamos animación
+        Promise.all([...slide.querySelectorAll('img')].map(img =>
+            img.complete ? Promise.resolve() : new Promise(res => img.onload = res)
+        )).then(() => {
+            slide.style.animation = 'none';
+            // forzamos reflow para reiniciar animación
+            void slide.offsetWidth;
+            slide.style.animation = 'scrollLoop 35s linear infinite';
+        });
+    }
+
+
+
     </script>
 
 </body>
