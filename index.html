@@ -422,7 +422,12 @@
         const project = projectsData[projectId];
         const modal = document.getElementById('project-modal');
         const modalBody = document.getElementById('modal-body');
-        
+        const header = document.querySelector('header'); // 👈 Nuevo
+
+        // 🔹 Animar desaparición del header
+        header.classList.remove('fade-in');
+        header.classList.add('fade-out');
+
         // Build gallery HTML
         let galleryHTML = project.gallery.map(img => 
             `<img src="${img}" alt="${project.title}">`
@@ -476,7 +481,6 @@
             </div>
             ` : ""}
 
-
             ${project.trailer ? `
             <div class="project-trailer">
                 <h3>Trailer</h3>
@@ -515,14 +519,32 @@
 
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
-
         lucide.createIcons();
     }
-    // Close project modal
+
+function closeProject() {
+    const modal = document.getElementById('project-modal');
+    const header = document.querySelector('header'); // 👈 Nuevo
+
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+
+    // 🔹 Animar aparición del header
+    header.classList.remove('fade-out');
+    header.classList.add('fade-in');
+}
+
+
     function closeProject() {
         const modal = document.getElementById('project-modal');
+        const header = document.querySelector('header');
+
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
+
+        // 🔹 Animación fade-in del header
+        header.classList.remove('fade-out');
+        header.classList.add('fade-in');
     }
 
     // Close modal when clicking outside
