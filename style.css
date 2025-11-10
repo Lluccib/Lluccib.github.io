@@ -749,6 +749,16 @@ footer a:hover {
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
 }
 
+/* ====== TEXT ALIGN (JUSTIFY FOR MODALS) ====== */
+.modal-content p,
+.project-description p,
+.project-awards p,
+.project-features li {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
 /* ====== PROJECT AWARDS ====== */
 .project-awards {
   margin: 3rem 0;
