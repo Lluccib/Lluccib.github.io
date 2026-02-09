@@ -105,7 +105,7 @@
 
             <div class="project reveal project-alien" onclick="openProject('alien')">
                 <h3>Alien Escape</h3>
-                <img src="Assets/img/alien_thumb.png" alt="Alien Escape Screenshot">
+                <img src="Assets/img/alien1.png" alt="Alien Escape Screenshot">
                 <p>Stealth Survival Horror</p>
                 <p><strong>Engine:</strong> Unity | <strong>Award:</strong> Premis Pixel 2024</p>
                 <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('alien')">View Details</a>
@@ -515,11 +515,11 @@
         const project = projectsData[projectId];
         const modal = document.getElementById('project-modal');
         const modalBody = document.getElementById('modal-body');
-        const header = document.querySelector('header');
+        const nav = document.querySelector('nav'); // <--- CAMBIO AQUÍ (nav en vez de header)
 
-        // 🔹 Animar desaparición del header
-        header.classList.remove('fade-in');
-        header.classList.add('fade-out');
+        // 🔹 Animar desaparición del nav
+        nav.classList.remove('fade-in');
+        nav.classList.add('fade-out');
 
         // --- Carrusel automático ---
 
@@ -622,15 +622,14 @@
 
     function closeProject() {
         const modal = document.getElementById('project-modal');
-        const header = document.querySelector('header');
+        const nav = document.querySelector('nav'); // <--- CAMBIO AQUÍ (nav en vez de header)
 
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
 
-        // 🔹 Animación fade-in del header
-        header.classList.remove('fade-out');
-        header.classList.add('fade-in');
-        
+        // 🔹 Animación fade-in del nav
+        nav.classList.remove('fade-out');
+        nav.classList.add('fade-in');
     }
 
     // Close modal when clicking outside

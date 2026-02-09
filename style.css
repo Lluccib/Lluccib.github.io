@@ -900,17 +900,16 @@ footer a:hover {
 }
 
 /* ====== NAV FADE ANIMATION ====== */
-header {
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-header.fade-out {
+/* ====== NAV FADE ANIMATION ====== */
+/* Aplicamos esto directamente al nav para no romper el position:fixed */
+nav.fade-out {
   opacity: 0;
   transform: translateY(-20px);
   pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Añadimos la transición aquí */
 }
 
-header.fade-in {
+nav.fade-in {
   opacity: 1;
   transform: translateY(0);
   pointer-events: all;
