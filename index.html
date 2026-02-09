@@ -531,22 +531,20 @@
             ${project.trailer ? `
             <div class="project-trailer">
                 <h3>Trailer</h3>
-                <div class="trailer-container" style="position:relative;">
-                    <img 
-                    src="https://img.youtube.com/vi/${project.trailer.split('v=')[1]}/maxresdefault.jpg" 
-                    alt="${project.title} Trailer"
-                    style="width:100%; display:block; border-radius:12px; cursor:pointer;">
-                    <a href="${project.trailer}" 
-                    target="_blank"
-                    style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-                            font-size:64px; color:white; text-decoration:none; 
-                            text-shadow:0 0 20px rgba(0,0,0,0.7);">
-                    ▶
-                    </a>
+                <div class="trailer-container">
+                    <iframe 
+                        width="100%" 
+                        height="500" 
+                        src="https://www.youtube.com/embed/${project.trailer.split('v=')[1]}" 
+                        title="${project.title} Trailer" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
             ` : ""}
-
+            
             <div class="project-features">
                 <h3>Key Features</h3>
                 <ul>${featuresHTML}</ul>
