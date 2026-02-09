@@ -173,6 +173,10 @@
             video.play();
         });
     });
+
+    document.querySelector('.scroll-indicator').addEventListener('click', () => {
+        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+    });
     
     // Scroll reveal animation
     document.addEventListener("DOMContentLoaded", () => {
@@ -454,8 +458,9 @@
                 "Assets/img/hexam2.png",
                 "Assets/img/hexam3.png"
             ],
+            trailer: "https://www.youtube.com/watch?v=YCgGi_d-GA0",
             links: {
-                play: "#"
+                play: "https://mermelada-games.itch.io/hexam"
             }
         }
 
