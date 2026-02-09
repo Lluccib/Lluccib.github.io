@@ -26,6 +26,7 @@
   --stelar-color: #6b6b6b;
   --sure-color: #6b6b6b;
   --hexam-color: #6b6b6b;
+  --alien-color: #6b6b6b;
 }
 
 * {
@@ -345,6 +346,17 @@ h2 {
 .project-sure a:hover {
   background: #6b6b6b;
   box-shadow: 0 4px 12px rgba(139, 90, 60, 0.4);
+}
+
+.project-alien a {
+  background: var(--alien-color);
+  color: #ffffff; 
+}
+
+.project-alien a:hover {
+  background: #6b6b6b;
+  color: white;
+  box-shadow: 0 4px 12px rgba(118, 255, 3, 0.4);
 }
 
 /* ====== FOOTER ====== */

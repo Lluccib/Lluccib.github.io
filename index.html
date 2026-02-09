@@ -103,6 +103,14 @@
                 <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('sure')">View Details</a>
             </div>
 
+            <div class="project reveal project-alien" onclick="openProject('alien')">
+                <h3>Alien Escape</h3>
+                <img src="Assets/img/alien_thumb.png" alt="Alien Escape Screenshot">
+                <p>Stealth Survival Horror</p>
+                <p><strong>Engine:</strong> Unity | <strong>Award:</strong> Premis Pixel 2024</p>
+                <a href="javascript:void(0)" onclick="event.stopPropagation(); openProject('alien')">View Details</a>
+            </div>
+
         </div>
     </section>
 
@@ -462,6 +470,43 @@
             links: {
                 play: "https://mermelada-games.itch.io/hexam"
             }
+        },
+        alien: {
+            title: "Alien Escape",
+            subtitle: "Stealth & Survival Horror",
+            engine: "Unity", // O Unreal, cámbialo si es otro
+            jam: "Course Project",
+            description: `
+                Alien Escape was developed as part of a 3D Environments course with the goal of creating a high-fidelity modular scene for a video game. Our team reinterpreted the claustrophobic atmosphere of the movie *Alien*, placing the player in a desolate space station where a lethal threat has eliminated the crew.<br><br>
+
+                The project received the <strong>Best Environment Award at the Premis Pixel 2024</strong>, recognizing its technical and artistic quality. While the project was a significant achievement in 3D modeling—where I contributed to the creation of modular assets and the 3D environment—my primary focus was on <strong>Level Design</strong>.<br><br>
+
+                I took full responsibility for the map layout and core design decisions. Since the gameplay hinged on high-stakes stealth where being seen means certain death, I designed the environment to balance tension with agency.<br><br> 
+                
+                The layout was carefully constructed to provide the player with strategic opportunities for movement, distraction, and decision-making, ensuring that the environment itself served as a tool for survival rather than just a backdrop.
+            `,
+            role: "Level Designer & 3D Artist",
+            duration: "2 months", // Ajusta esto
+            team: "4 people", // Ajusta esto
+            features: [
+                "Award-winning modular 3D environment",
+                "Stealth-focused level layout",
+                "Atmospheric visual storytelling",
+                "High-tension survival mechanics"
+            ],
+            awards: [
+                { img: "Assets/awards/Premispixel.svg", name: "Best Environment - Premis Pixel 2024" }
+            ],
+            gallery: [
+                "Assets/img/alien1.png", // Asegúrate de tener estas fotos
+                "Assets/img/alien2.png",
+                "Assets/img/alien3.png"
+            ],
+            // Si tienes vídeo, descomenta la siguiente línea:
+            links: {
+                play: "x"
+            },
+            trailer: "https://www.youtube.com/watch?v=oT8SFPFXtgA",
         }
 
     };
